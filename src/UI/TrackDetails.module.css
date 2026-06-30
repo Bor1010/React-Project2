@@ -1,0 +1,13 @@
+.track {
+    border: 1px solid darkmagenta;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.track h2 {
+    color: #646cff;
+}
+
+h4 {
+    color: green;
+}
