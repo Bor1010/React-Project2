@@ -7,6 +7,7 @@ type Props = {
 }
 
 
+
 export function TrackDetails(props: Props) {
 
   const selectedTrack = useTrack(props.selectedTrackId);
@@ -29,5 +30,6 @@ export function TrackDetails(props: Props) {
 
   </div>);
 }
+
 
 export default TrackDetails;
