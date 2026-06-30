@@ -1,22 +1,25 @@
-const apiKey = 'a421922d-a29a-4691-8721-ee605a2f6380';
-
+const apiKey = import.meta.env.VITE_API_KEY;
+/*
 const headers = {
-        headers: {
         'api-key': apiKey
-      }
-}
+}*/
 
+const requestParams: RequestInit = {};
+
+if (apiKey) {
+  requestParams['headers'] = {'api-key': apiKey}
+}
 
 
 export const getTrackDetails = (trackId: string) => {
     
-    return fetch('https://musicfun.it-incubator.app/api/1.0/playlists/tracks/' + trackId, headers).then(res => res.json());
+    return fetch('https://musicfun.it-incubator.app/api/1.0/playlists/tracks/' + trackId, requestParams).then(res => res.json());
 }
 
 
 export const getTracks = async () =>  {
 
-    const resp = await fetch('https://musicfun.it-incubator.app/api/1.0/playlists/tracks?pageNumber=2&pageSize=5', headers);
+    const resp = await fetch('https://musicfun.it-incubator.app/api/1.0/playlists/tracks?pageNumber=2&pageSize=5', requestParams);
 
     if(!resp.ok) {
 
